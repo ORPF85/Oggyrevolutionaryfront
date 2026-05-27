@@ -8,7 +8,7 @@
 }
 
 :root {
-    --bg-blue: #004282;        /* Vibrant Royal Slate Blue */
+    --bg-blue: #004282;        /* Vibrant Royal/Slate Blue */
     --dark-blue: #002244;      /* Deep Navy Blue */
     --accent-yellow: #ffcc00;  /* Official OPRDF Golden Yellow Accent */
     --text-dark: #333333;
@@ -44,7 +44,6 @@ body {
     font-weight: 800;
     font-size: 1.8rem;
     letter-spacing: 1px;
-    text-decoration: none;
 }
 
 .yellow-dot {
@@ -106,7 +105,7 @@ body {
     margin-bottom: 40px;
 }
 
-/* --- Banner Buttons & Hover System --- */
+/* --- Banner Buttons & Hover States --- */
 .banner-buttons {
     display: flex;
     justify-content: center;
@@ -124,7 +123,6 @@ body {
     display: inline-block;
 }
 
-/* Blueprint Button (Solid Yellow -> Turning Dark Blue) */
 .btn-main {
     background: var(--accent-yellow);
     color: var(--dark-blue);
@@ -132,7 +130,7 @@ body {
     border: 2px solid var(--accent-yellow);
 }
 
-.btn-main:hover, .btn-main:active {
+.btn-main:hover {
     background: var(--dark-blue);
     color: var(--accent-yellow);
     border-color: var(--accent-yellow);
@@ -140,14 +138,13 @@ body {
     box-shadow: 0 6px 20px rgba(255,204,0,0.5);
 }
 
-/* Governance Button (Transparent Outline -> Turning Solid Yellow) */
 .btn-secondary {
     background: transparent;
     color: var(--text-light);
     border: 2px solid var(--text-light);
 }
 
-.btn-secondary:hover, .btn-secondary:active {
+.btn-secondary:hover {
     background: var(--accent-yellow);
     color: var(--dark-blue);
     border-color: var(--accent-yellow);
@@ -164,7 +161,7 @@ body {
     font-size: 2.2rem;
     text-align: center;
     color: var(--dark-blue);
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     font-weight: 800;
 }
 
@@ -174,7 +171,7 @@ body {
     width: 60px;
     height: 4px;
     background: var(--accent-yellow);
-    margin: 12px auto 0 auto;
+    margin: 12px auto 30px auto;
     border-radius: 2px;
 }
 
@@ -194,10 +191,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-.protocol-card:hover {
-    transform: translateY(-5px);
-}
-
+.protocol-card:hover { transform: translateY(-5px); }
 .card-yellow { border-top: 5px solid var(--accent-yellow); }
 .card-blue { border-top: 5px solid var(--bg-blue); }
 
@@ -216,7 +210,6 @@ body {
 }
 
 .protocol-card ul { list-style: none; }
-
 .protocol-card ul li {
     position: relative;
     padding-left: 20px;
@@ -273,7 +266,7 @@ body {
     color: #475569;
 }
 
-/* --- Social Media Interactive Buttons inside Card 3 --- */
+/* --- Social Links Inside Card 3 --- */
 .social-box {
     display: flex;
     gap: 15px;
@@ -296,12 +289,77 @@ body {
     transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.social-btn:hover, .social-btn:active {
+.social-btn:hover {
     background: var(--accent-yellow);
     color: var(--dark-blue);
     border-color: var(--accent-yellow);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+}
+
+/* --- Contact/Sign-up Section --- */
+.contact-section {
+    padding: 80px 8%;
+    background-color: #f8fafc;
+}
+
+.contact-container {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-subtitle {
+    color: #64748b;
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+}
+
+.contact-form {
+    background: var(--text-light);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: var(--bg-blue);
+}
+
+.form-submit-btn {
+    width: 100%;
+    background: var(--dark-blue);
+    color: var(--text-light);
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-submit-btn:hover {
+    background: var(--accent-yellow);
+    color: var(--dark-blue);
+    box-shadow: 0 4px 15px rgba(255,204,0,0.3);
 }
 
 /* --- Footer Area --- */
@@ -314,25 +372,16 @@ body {
     border-top: 1px solid #e2e8f0;
 }
 
-.footer p {
-    color: #64748b;
-    font-size: 0.9rem;
-}
+.footer p { color: #64748b; font-size: 0.9rem; }
+.footer h2 { color: var(--bg-blue); font-weight: 800; font-size: 1.4rem; }
 
-.footer h2 {
-    color: var(--bg-blue);
-    font-weight: 800;
-    font-size: 1.4rem;
-}
-
-/* Responsive Scaling Layouts */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .navbar { padding: 15px 5%; }
     .hero { padding: 120px 5% 60px 5%; }
     .hero-content h1 { font-size: 2.1rem; }
-    .section-title { font-size: 1.8rem; }
     .card-grid { grid-template-columns: 1fr; }
-    .desk-card { padding: 25px; }
+    .desk-card, .contact-form { padding: 25px; }
     .social-box { flex-direction: column; }
     .social-btn { justify-content: center; }
 }

@@ -7,10 +7,11 @@
     scroll-behavior: smooth;
 }
 
-:root {
-    --primary-color: #6f4e37; /* Coffee Brown */
-    --secondary-color: #f5f5dc; /* Beige */
-    --dark-color: #332211;
+    :root {
+    --primary-color: #002d62;   /* OPRF Deep Navy Blue */
+    --secondary-color: #0b6623; /* OPRF Progress Green */
+    --accent-color: #f4f6f7;    /* Light Gray for contrasting sections */
+    --dark-color: #111e2e;      /* Very dark blue for readable body text */
     --light-color: #ffffff;
 }
 

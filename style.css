@@ -163,82 +163,37 @@ body {
     box-shadow: 0 6px 20px rgba(255,204,0,0.4);
 }
 
-/* --- Protocol Grid Configuration --- */
+/* --- Blueprint & Protocol Section Layouts --- */
+.blueprint-section {
+    padding: 80px 8% 40px 8%;
+    background-color: #f8fafc;
+}
+
 .protocol-section {
-    padding: 80px 8%;
+    padding: 40px 8% 80px 8%;
+    background-color: #f8fafc;
 }
 
-.section-title {
-    font-size: 2.2rem;
-    text-align: center;
-    color: var(--dark-blue);
-    margin-bottom: 10px;
-    font-weight: 800;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--accent-yellow);
-    margin: 12px auto 30px auto;
-    border-radius: 2px;
-}
-
+/* Base Responsive Grid Structure */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.protocol-card {
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
-    transition: transform 0.3s ease;
+/* Explicit 2-Column Mode for the Protocol Section on Screens */
+@media (min-width: 992px) {
+    .card-grid.cols-2 {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
-.protocol-card:hover { transform: translateY(-5px); }
-.card-yellow { border-top: 5px solid var(--accent-yellow); }
+/* Card Accent Colors Based Exactly on the Layout Images */
 .card-blue { border-top: 5px solid var(--bg-blue); }
-
-.protocol-card h3 {
-    color: var(--dark-blue);
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.protocol-card p {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-}
-
-.protocol-card ul { list-style: none; }
-.protocol-card ul li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 15px;
-    color: #444;
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
-.protocol-card ul li::before {
-    content: "•";
-    color: var(--bg-blue);
-    font-weight: bold;
-    font-size: 1.3rem;
-    position: absolute;
-    left: 0;
-    top: -2px;
-}
+.card-yellow { border-top: 5px solid var(--accent-yellow); }
+.card-blue-dark { border-top: 5px solid var(--dark-blue); }
 
 /* --- Manifesto Operations Stack Layout --- */
 .manifesto-section {

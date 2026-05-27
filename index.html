@@ -10,106 +10,73 @@
 <body>
 
     <header class="header">
-        <nav class="navbar">
-            <a href="#" class="nav-logo">
-                <h2><i class="fas fa-coffee"></i> CoffeeHub</h2>
-            </a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
-                <li class="nav-item"><a href="#testimonials" class="nav-link">Reviews</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
-
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Start Your Day With Perfect Coffee</h1>
-            <p>Experience the finest roasted coffee beans crafted by expert baristas right in the heart of the city.</p>
-            <a href="#menu" class="btn">Explore Menu</a>
+     <nav class="navbar">
+        <a href="#" class="nav-logo">
+            <h2><span style="color: var(--primary-color);">OP</span><span style="color: var(--secondary-color);">RF</span></h2>
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#mission" class="nav-link">Our Mission</a></li>
+            <li class="nav-item"><a href="#pillars" class="nav-link">Pillars</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Join Movement</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-    </section>
+    </nav>
+</header>
 
-    <section class="about" id="about">
-        <div class="about-container">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=600" alt="About Our Coffee">
-            </div>
-            <div class="about-text">
-                <h2>Our Story</h2>
-                <p>Since our inception, we have been dedicated to sourcing the highest quality coffee beans ethically. Every batch is roasted precisely to bring out the richest flavors and aromas possible.</p>
-                <p>Whether you need a quick espresso to kickstart your day or a cozy corner to unwind, we provide the perfect ambiance for every coffee lover.</p>
-            </div>
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>PEOPLE &bull; POLICY &bull; PROGRESS</h1>
+        <p style="font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; color: var(--secondary-color); font-weight: bold;">
+            Democracy. Development. Dignity.
+        </p>
+        <p>Building a revolutionary political framework dedicated to transparent governance, inclusive development, and institutional integrity.</p>
+        <a href="#contact" class="btn">Get Involved</a>
+    </div>
+</section>
+
+<section class="about" id="mission">
+    <div class="about-container">
+        <div class="about-text" style="max-width: 100%;">
+            <h2>Our Core Mission</h2>
+            <p>The OPRF movement stands as a firm testament to modern democratic reform. We bridge the gap between grassroots citizen needs and institutional policy framework execution.</p>
+            <blockquote>"True progress is achieved when policy prioritizes people, development ensures dignity, and leadership upholds democracy."</blockquote>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="menu" id="menu">
-        <h2 class="section-title">Our Popular Menu</h2>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=300" alt="Hot Espresso">
-                <h3>Hot Espresso</h3>
-                <p class="price">$3.50</p>
-            </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=300" alt="Caffè Latte">
-                <h3>Caffè Latte</h3>
-                <p class="price">$4.20</p>
-            </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=300" alt="Cappuccino">
-                <h3>Cappuccino</h3>
-                <p class="price">$4.50</p>
-            </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=300" alt="Iced Macchiato">
-                <h3>Iced Macchiato</h3>
-                <p class="price">$4.80</p>
-            </div>
+<section class="menu" id="pillars">
+    <h2 class="section-title">The Three Pillars of OPRF</h2>
+    <div class="menu-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="menu-item">
+            <i class="fas fa-users fa-3x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
+            <h3>Democracy</h3>
+            <p>Empowering the collective voice of the citizenry through direct communication channels and transparent electoral accountability.</p>
         </div>
-    </section>
-
-    <section class="testimonials" id="testimonials">
-        <h2 class="section-title">What Our Customers Say</h2>
-        <div class="testimonials-container">
-            <div class="testimonial-card">
-                <p class="review">"The best atmosphere and incredible single-origin pour-overs. This is my absolute favorite spot to get work done!"</p>
-                <h4>- Alex Johnson</h4>
-            </div>
-            <div class="testimonial-card">
-                <p class="review">"Friendly staff and consistently smooth espresso. Highly recommend the standard vanilla latte!"</p>
-                <h4>- Sarah Miller</h4>
-            </div>
+        <div class="menu-item">
+            <i class="fas fa-chart-line fa-3x" style="color: var(--secondary-color); margin-bottom: 15px;"></i>
+            <h3>Development</h3>
+            <p>Implementing data-backed policies to upgrade technology infrastructure, economic opportunities, and sustainable community growth.</p>
         </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </section>
-
-    <footer class="footer">
-        <p>&copy; 2026 CoffeeHub. All Rights Reserved.</p>
-        <div class="socials">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+        <div class="menu-item">
+            <i class="fas fa-gavel fa-3x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
+            <h3>Dignity</h3>
+            <p>Ensuring social security, justice, and fair labor equity so that every single individual can live a life of complete respect.</p>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="script.js"></script>
-</body>
-</html>
- 
+<section class="contact" id="contact">
+    <h2 class="section-title">Join The OPRF Movement</h2>
+    <form class="contact-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="text" placeholder="Voter Constituency / Region" required>
+        <textarea placeholder="How would you like to contribute to the progress?" rows="5" required></textarea>
+        <button type="submit" class="btn" style="background-color: var(--secondary-color);">Submit Application</button>
+    </form>
+</section>

@@ -3,80 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Coffee Website</title>
+    <title>OPRDF | Organization for Political Reform & Development</title>
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Header / Navbar Section -->
     <header class="header">
-     <nav class="navbar">
-    <a href="#" class="nav-logo">
-    <img src="logo.png" alt="OPRF Logo" class="logo-img">
-</a>
-        <ul class="nav-menu">
-            <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="#mission" class="nav-link">Our Mission</a></li>
-            <li class="nav-item"><a href="#pillars" class="nav-link">Pillars</a></li>
-            <li class="nav-item"><a href="#contact" class="nav-link">Join Movement</a></li>
-        </ul>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </nav>
-</header>
+        <nav class="navbar">
+            <a href="#" class="nav-logo">
+                <h2>OPRD<span class="yellow-dot">F</span>.</h2>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#protocol" class="nav-link">Protocol</a></li>
+                <li class="nav-item"><a href="#manifesto" class="nav-link">Manifesto</a></li>
+                <li class="nav-item"><a href="#connect" class="nav-link">Connect</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
 
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>PEOPLE &bull; POLICY &bull; PROGRESS</h1>
-        <p style="font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; color: var(--secondary-color); font-weight: bold;">
-            Democracy. Development. Dignity.
-        </p>
-        <p>Building a revolutionary political framework dedicated to transparent governance, inclusive development, and institutional integrity.</p>
-        <a href="#contact" class="btn">Get Involved</a>
-    </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>OGGY'S POLITICAL REFORM & DEVELOPMENT FRONT</h1>
+            <p class="hero-tagline">"One Nation, One Identity, Equal Progress."</p>
+            <p class="hero-description">
+                Oggy's Political Reform & Development Front (OPRDF) stands as a historic paradigm shift in Indian governance. 
+                We refuse to view our citizens through the fractured lenses of religious divides, caste hierarchies, or linguistic disputes. 
+                OPRDF represents every single individual born of this soil as an equal Indian—endowed with identical rights, identical dignity, 
+                and identical ownership over the nation's future. Our mission is to dismantle identity politics and replace it with a ruthless 
+                commitment to socio-economic engineering, constitutional discipline, and human development.
+            </p>
+            <div class="banner-buttons">
+                <a href="#manifesto" class="btn btn-main">Socio-Economic Blueprint</a>
+                <a href="#protocol" class="btn btn-secondary">Constitutional Governance</a>
+            </div>
+        </div>
+    </section>
 
-<section class="about" id="mission">
-    <div class="about-container">
-        <div class="about-text" style="max-width: 100%;">
-            <h2>Our Core Mission</h2>
-            <p>The OPRF movement stands as a firm testament to modern democratic reform. We bridge the gap between grassroots citizen needs and institutional policy framework execution.</p>
-            <blockquote>"True progress is achieved when policy prioritizes people, development ensures dignity, and leadership upholds democracy."</blockquote>
-        </div>
-    </div>
-</section>
+    <!-- Protocol Section -->
+    <section class="protocol-section" id="protocol">
+        <h2 class="section-title">The Constitutional & Governance Protocol</h2>
+        
+        <div class="card-grid">
+            <!-- Card 1 -->
+            <div class="protocol-card card-yellow">
+                <h3><i class="fas fa-user-graduate"></i> Statutory Qualifications to Run Government</h3>
+                <p>To govern a nuclear-armed nation of over a billion people, enthusiasm is not enough; competence is mandatory. OPRDF will fight to codify strict, constitutional prerequisites for anyone seeking public office:</p>
+                <ul>
+                    <li><strong>Educational & Administrative Benchmarks:</strong> Candidates must possess verified educational degrees and pass standard constitutional, economic, and civil administrative literacy certifications.</li>
+                    <li><strong>Flawless Judicial Record:</strong> Any individual with formal charges framed against them for serious criminal, economic, or communal offenses will be permanently barred from contesting elections.</li>
+                </ul>
+            </div>
 
-<section class="menu" id="pillars">
-    <h2 class="section-title">The Three Pillars of OPRF</h2>
-    <div class="menu-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-        <div class="menu-item">
-            <i class="fas fa-users fa-3x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
-            <h3>Democracy</h3>
-            <p>Empowering the collective voice of the citizenry through direct communication channels and transparent electoral accountability.</p>
+            <!-- Card 2 -->
+            <div class="protocol-card card-blue">
+                <h3><i class="fas fa-history"></i> The Right to Recall & Public Approval Rate</h3>
+                <p>Power belongs to the citizens, not the politicians. We introduce a legally structured, constitutionally backed Right to Recall mechanism driven by a real-time Rate of Approval:</p>
+                <ul>
+                    <li><strong>The Continuous Mandate:</strong> Elected representatives must maintain a transparent, ongoing digital and physical approval rating verified by an independent electoral authority.</li>
+                    <li><strong>The Threshold:</strong> If an official's public approval rating drops below 40% at any point after their first year in office, a secure, local referendum is automatically triggered.</li>
+                    <li><strong>The Replacement:</strong> If a simple majority of the constituency votes "Yes" on the referendum, the member is instantly recalled and removed from office, forcing a fresh, clean election.</li>
+                </ul>
+            </div>
         </div>
-        <div class="menu-item">
-            <i class="fas fa-chart-line fa-3x" style="color: var(--secondary-color); margin-bottom: 15px;"></i>
-            <h3>Development</h3>
-            <p>Implementing data-backed policies to upgrade technology infrastructure, economic opportunities, and sustainable community growth.</p>
-        </div>
-        <div class="menu-item">
-            <i class="fas fa-gavel fa-3x" style="color: var(--primary-color); margin-bottom: 15px;"></i>
-            <h3>Dignity</h3>
-            <p>Ensuring social security, justice, and fair labor equity so that every single individual can live a life of complete respect.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section class="contact" id="contact">
-    <h2 class="section-title">Join The OPRF Movement</h2>
-    <form class="contact-form">
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <input type="text" placeholder="Voter Constituency / Region" required>
-        <textarea placeholder="How would you like to contribute to the progress?" rows="5" required></textarea>
-        <button type="submit" class="btn" style="background-color: var(--secondary-color);">Submit Application</button>
-    </form>
-</section>
+    <!-- Connect Banner Section -->
+    <section class="connect-section" id="connect">
+        <div class="connect-banner">
+            <h2>Connect With Our Platform</h2>
+            <p>Join the movement to establish structural accountability, economic parity, and unified development across every state and region.</p>
+            <div class="social-box">
+                <a href="#" class="social-btn">X / Twitter</a>
+                <a href="#" class="social-btn">Instagram</a>
+                <a href="#" class="social-btn">Facebook</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 OPRDF. All Rights Reserved.</p>
+        <h2>OPRDF</h2>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

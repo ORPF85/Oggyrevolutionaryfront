@@ -21,16 +21,21 @@ body {
     color: var(--text-dark);
 }
 
-/* --- Fixed Top Navbar --- */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--text-light);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    z-index: 1000;
+/* --- New CSS Rules for the Image Logo --- */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    /* This removes the old padding-bottom that was for text */
 }
+
+.logo-img {
+    height: 60px; /* Set your desired logo height here */
+    width: auto;   /* This keeps the image from stretching */
+    display: block;
+}
+
+/* --- Keep the rest of your navbar styles --- */
 
 .navbar {
     display: flex;

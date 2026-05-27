@@ -76,7 +76,11 @@ section {
 .nav-logo h2 {
     color: var(--primary-color);
 }
-
+.logo-img {
+    height: 55px;   /* Adjust this number to make the logo bigger or smaller */
+    width: auto;    /* This keeps the circle perfectly round and proportioned */
+    display: block;
+}
 .nav-menu {
     display: flex;
     gap: 30px;

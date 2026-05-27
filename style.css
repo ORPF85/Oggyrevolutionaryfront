@@ -1,303 +1,83 @@
-/* --- Global Reset & Branding Variables --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-}
-
-:root {
-    --bg-blue: #004282;        /* Vibrant Royal/Slate Blue */
-    --dark-blue: #002244;      /* Deep Navy blue */
-    --accent-yellow: #ffcc00;  /* OPRDF Golden Yellow */
-    --text-dark: #333333;
-    --text-light: #ffffff;
-    --card-bg: #ffffff;
-}
-
-body {
-    background-color: #f8fafc;
-    color: var(--text-dark);
-}
-
-/* --- Navigation Header --- */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--text-light);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    z-index: 1000;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 8%;
-}
-
-.nav-logo h2 {
-    color: var(--dark-blue);
-    font-weight: 800;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-}
-
-.yellow-dot {
-    color: var(--accent-yellow);
-}
-
-.nav-menu {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-link {
-    color: var(--dark-blue);
-    font-weight: 600;
-    transition: 0.3s ease;
-}
-
-.nav-link:hover {
-    color: var(--bg-blue);
-}
-
-/* --- Hero Section --- */
-.hero {
-    min-height: 85vh;
-    background: linear-gradient(180deg, var(--dark-blue) 0%, var(--bg-blue) 100%);
-    color: var(--text-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 120px 8% 80px 8%;
-}
-
-.hero-content {
-    max-width: 1100px;
-}
-
-.hero-content h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    margin-bottom: 20px;
-    line-height: 1.3;
-}
-
-.hero-tagline {
-    font-style: italic;
-    font-size: 1.2rem;
-    color: #e2e8f0;
-    margin-bottom: 30px;
-}
-
-.hero-description {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #f1f5f9;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-/* --- Modern Buttons --- */
-.banner-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.btn-main {
-    display: inline-block;
-    background: var(--accent-yellow);
-    color: var(--dark-blue);
-    padding: 15px 35px;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 16px;
-    transition: 0.3s ease;
-    text-decoration: none;
-    box-shadow: 0 4px 15px rgba(255,204,0,0.4);
-}
-
-.btn-main:hover {
-    background: var(--text-light);
-    color: var(--dark-blue);
-    transform: translateY(-3px);
-}
-
-.btn-secondary {
-    display: inline-block;
-    background: transparent;
-    color: var(--text-light);
-    padding: 15px 35px;
-    border-radius: 30px;
-    border: 2px solid var(--text-light);
-    font-weight: 700;
-    font-size: 16px;
-    transition: 0.3s ease;
-    text-decoration: none;
-}
-
-.btn-secondary:hover {
-    background: var(--text-light);
-    color: var(--bg-blue);
-    transform: translateY(-3px);
-}
-
-/* --- Protocol Cards Layout --- */
-.protocol-section {
+/* --- Manifesto Operations Desk (Stacked Design) --- */
+.manifesto-section {
     padding: 80px 8%;
+    background-color: #f8fafc; /* Clean, minimal off-white background */
 }
 
-.section-title {
-    font-size: 2.2rem;
-    text-align: center;
-    color: var(--dark-blue);
-    margin-bottom: 50px;
-    font-weight: 800;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--accent-yellow);
-    margin: 12px auto 0 auto;
-    border-radius: 2px;
-}
-
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 35px;
-    max-width: 1200px;
+.manifesto-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between each stacked block */
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.protocol-card {
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+.desk-card {
+    background: #ffffff;
+    padding: 40px 45px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03); /* Soft sleek shadow */
     transition: transform 0.3s ease;
 }
 
-.protocol-card:hover {
-    transform: translateY(-5px);
+.desk-card:hover {
+    transform: translateY(-2px);
 }
 
-.card-yellow {
-    border-top: 4px solid var(--accent-yellow);
+/* Matching top borders exactly from your layouts */
+.border-blue {
+    border-top: 5px solid var(--bg-blue);
 }
 
-.card-blue {
-    border-top: 4px solid var(--bg-blue);
+.border-yellow {
+    border-top: 5px solid var(--accent-yellow);
 }
 
-.protocol-card h3 {
+.desk-card h3 {
+    font-size: 1.6rem;
     color: var(--dark-blue);
-    font-size: 1.4rem;
     margin-bottom: 20px;
     font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    letter-spacing: -0.3px;
 }
 
-.protocol-card p {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
+.desk-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #475569; /* Soft professional text color */
 }
 
-.protocol-card ul {
-    list-style: none;
-}
-
-.protocol-card ul li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 15px;
-    color: #444;
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
-.protocol-card ul li::before {
-    content: "•";
-    color: var(--bg-blue);
-    font-weight: bold;
-    font-size: 1.3rem;
-    position: absolute;
-    left: 0;
-    top: -2px;
-}
-
-/* --- Connect Callout Banner --- */
-.connect-section {
-    padding: 40px 8%;
-}
-
-.connect-banner {
-    background: var(--dark-blue);
-    color: var(--text-light);
-    border-radius: 12px;
-    padding: 50px 40px;
-    text-align: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-.connect-banner h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.connect-banner p {
-    color: #cbd5e1;
-    max-width: 700px;
-    margin: 0 auto 30px auto;
-    line-height: 1.6;
-}
-
+/* --- Social Buttons Inside Card 3 --- */
 .social-box {
     display: flex;
-    justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
+    margin-top: 25px;
 }
 
 .social-btn {
     display: inline-block;
-    border: 1px solid rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.05);
-    color: var(--text-light);
+    border: 2px solid var(--dark-blue);
+    background: transparent;
+    color: var(--dark-blue);
     padding: 10px 25px;
-    border-radius: 20px;
+    border-radius: 25px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
-    transition: 0.3s ease;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.social-btn:hover {
+/* Interactive Button Hover Mechanics */
+.social-btn:hover, .social-btn:active {
     background: var(--accent-yellow);
     color: var(--dark-blue);
     border-color: var(--accent-yellow);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
 }
 
-/* --- Footer --- */
+/* --- Footer Configuration --- */
 .footer {
     background: #ffffff;
     padding: 30px 8%;
@@ -318,15 +98,9 @@ body {
     font-size: 1.4rem;
 }
 
-/* --- Mobile Responsive Rules --- */
+/* Mobile Tweak */
 @media (max-width: 768px) {
-    .navbar { padding: 15px 5%; }
-    .hero { padding: 100px 5% 60px 5%; }
-    .hero-content h1 { font-size: 2rem; }
-    .section-title { font-size: 1.8rem; }
-    .card-grid { grid-template-columns: 1fr; }
-    .protocol-card { padding: 25px; }
-    
-    .hamburger { display: block; }
-    /* Mobile slide out styles remain active from your script.js file */
+    .desk-card { padding: 25px; }
+    .social-box { flex-direction: column; }
+    .social-btn { text-align: center; }
 }

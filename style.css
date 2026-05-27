@@ -21,12 +21,18 @@ body {
     color: var(--text-dark);
 }
 
-/* --- New CSS Rules for the Image Logo --- */
+/* --- Optimized Logo Styling --- */
 .nav-logo {
     display: flex;
     align-items: center;
     text-decoration: none;
-    /* This removes the old padding-bottom that was for text */
+}
+
+.logo-img {
+    height: 55px;   /* Clean sizing to fit neatly in your fixed header */
+    width: auto;    /* Prevents the logo from stretching or compressing distortively */
+    display: block;
+    object-fit: contain;
 }
 
 .logo-img {

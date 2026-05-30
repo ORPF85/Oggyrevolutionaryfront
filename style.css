@@ -470,8 +470,8 @@ grid-template-columns:1fr;
     position:absolute;
     inset:0;
 
-    /* FIXED: Changed out the broken wikimedia link with a reliable CDN hotlink */
-    background-image: url("https://raw.githubusercontent.com/Anujsharma635/India-map-with-all-states-SVG/main/India_Map.svg");
+    background-image:
+    url("https://upload.wikimedia.org/wikipedia/commons/4/41/India_map_blank.svg");
 
     background-size:cover;
     background-position:center;

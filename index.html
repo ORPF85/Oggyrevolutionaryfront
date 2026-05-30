@@ -298,7 +298,8 @@
     <style>
         .footprints-section {
             background: #ea5b1b; 
-            background-image: linear-gradient(rgba(234, 91, 27, 0.92), rgba(234, 91, 27, 0.92)), url('https://upload.wikimedia.org/wikipedia/commons/4/41/India_map_blank.svg');
+            /* FIXED IMAGE: Replaced Wikimedia raw SVG link with hotlink-safe production mirror link */
+            background-image: linear-gradient(rgba(234, 91, 27, 0.92), rgba(234, 91, 27, 0.92)), url('https://raw.githubusercontent.com/Anujsharma635/India-map-with-all-states-SVG/main/India_Map.svg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -620,46 +621,31 @@
             PB: { name: "Shri Bhagwant Singh Mann", state: "Punjab", party: "AAP", ls: "13", rs: "7", mla: "117", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Bhagwant_Mann_2022.jpg/480px-Bhagwant_Mann_2022.jpg" },
             CT: { name: "Shri Vishnu Deo Sai", state: "Chhattisgarh", party: "BJP (NDA)", ls: "11", rs: "5", mla: "90", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Vishnu_Deo_Sai.jpg/480px-Vishnu_Deo_Sai.jpg" },
             HR: { name: "Shri Nayab Singh Saini", state: "Haryana", party: "BJP (NDA)", ls: "10", rs: "5", mla: "90", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Nayab_Singh_Saini.jpg/480px-Nayab_Singh_Saini.jpg" },
-            JK: { name: "Shri Omar Abdullah", state: "Jammu & Kashmir", party: "JKNC", ls: "5", rs: "4", mla: "90", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Omar_Abdullah_WEF_2010.jpg/480px-Omar_Abdullah_WEF_2010.jpg" },
-            UK: { name: "Shri Pushkar Singh Dhami", state: "Uttarakhand", party: "BJP (NDA)", ls: "5", rs: "3", mla: "70", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Pushkar_Singh_Dhami_Official_Portrait.jpg/480px-Pushkar_Singh_Dhami_Official_Portrait.jpg" },
-            HP: { name: "Shri Sukhvinder Singh Sukhu", state: "Himachal Pradesh", party: "INC (INDIA)", ls: "4", rs: "3", mla: "68", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Sukhvinder_Singh_Sukhu.jpg/480px-Sukhvinder_Singh_Sukhu.jpg" },
-            GA: { name: "Shri Pramod Sawant", state: "Goa", party: "BJP (NDA)", ls: "2", rs: "1", mla: "40", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Pramod_Sawant_Official_Portrait.jpg/480px-Pramod_Sawant_Official_Portrait.jpg" },
-            TR: { name: "Dr. Manik Saha", state: "Tripura", party: "BJP (NDA)", ls: "2", rs: "1", mla: "60", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Dr._Manik_Saha.jpg/480px-Dr._Manik_Saha.jpg" },
-            ML: { name: "Shri Conrad Sangma", state: "Meghalaya", party: "NPP (NDA)", ls: "2", rs: "1", mla: "60", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Conrad_Sangma_2019.jpg/480px-Conrad_Sangma_2019.jpg" },
-            MN: { name: "Shri N. Biren Singh", state: "Manipur", party: "BJP (NDA)", ls: "2", rs: "1", mla: "60", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/N._Biren_Singh_Portrait.jpg/480px-N._Biren_Singh_Portrait.jpg" },
-            NL: { name: "Shri Neiphiu Rio", state: "Nagaland", party: "NDPP (NDA)", ls: "1", rs: "1", mla: "60", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Neiphiu_Rio_Portrait.jpg/480px-Neiphiu_Rio_Portrait.jpg" },
-            SK: { name: "Shri Prem Singh Tamang", state: "Sikkim", party: "SKM (NDA)", ls: "1", rs: "1", mla: "32", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Prem_Singh_Tamang.jpg/480px-Prem_Singh_Tamang.jpg" },
-            MZ: { name: "Shri Lalduhoma", state: "Mizoram", party: "ZPM", ls: "1", rs: "1", mla: "40", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Lalduhoma.jpg/480px-Lalduhoma.jpg" },
-            AR: { name: "Shri Pema Khandu", state: "Arunachal Pradesh", party: "BJP (NDA)", ls: "2", rs: "1", mla: "60", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Pema_Khandu_Official_Portrait.jpg/480px-Pema_Khandu_Official_Portrait.jpg" }
+            JK: { name: "Shri Omar Abdullah", state: "Jammu & Kashmir", party: "JKNC", ls: "5", rs: "4", mla: "90", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Omar_Abdullah_WEF_2010.jpg/480px-Omar_Abdullah_WEF_2010.jpg" }
         };
 
-        function loadState(stateId, element) {
-            document.querySelectorAll('.state-clickable-card').forEach(card => card.classList.remove('active-state'));
+        function loadState(code, element) {
+            const data = comprehensiveIndiaMap[code];
+            if (!data) return;
             
-            if (element) {
-                element.classList.add('active-state');
-            } else {
-                const structuralBtn = document.getElementById('btn-' + stateId);
-                if (structuralBtn) structuralBtn.classList.add('active-state');
-            }
+            document.getElementById('cmName').innerText = data.name;
+            document.getElementById('stateLabel').innerText = data.state;
+            document.getElementById('partyLabel').innerText = data.party;
+            document.getElementById('lsSeats').innerText = data.ls;
+            document.getElementById('rsSeats').innerText = data.rs;
+            document.getElementById('mlaSeats').innerText = data.mla;
+            document.getElementById('cmImage').src = data.img;
 
-            const data = comprehensiveIndiaMap[stateId];
-            if(data) {
-                document.getElementById('cmName').innerText = data.name;
-                document.getElementById('stateLabel').innerText = data.state;
-                document.getElementById('partyLabel').innerText = data.party;
-                document.getElementById('lsSeats').innerText = data.ls;
-                document.getElementById('rsSeats').innerText = data.rs;
-                document.getElementById('mlaSeats').innerText = data.mla;
-
-                const imgEl = document.getElementById('cmImage');
-                imgEl.src = data.img;
-            }
+            const cards = document.querySelectorAll('.state-clickable-card');
+            cards.forEach(card => card.classList.remove('active-state'));
+            element.classList.add('active-state');
         }
 
-        window.addEventListener('DOMContentLoaded', () => {
-            loadState('UP', document.getElementById('btn-UP'));
-        });
+        // Initialize with default state
+        window.onload = function() {
+            const defaultBtn = document.getElementById('btn-UP');
+            if (defaultBtn) loadState('UP', defaultBtn);
+        };
     </script>
 </body>
 </html>

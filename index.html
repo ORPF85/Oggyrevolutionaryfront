@@ -393,7 +393,7 @@
         margin: 0 auto;
     }
 
-    /* Left Side display panel matching Screenshot 2026-05-30 145937.png */
+    /* Left Side display panel matching original layout dimensions */
     .profile-display-card {
         background: #0a2540;
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -409,7 +409,7 @@
         box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
 
-    /* Dynamic State Map Watermark Layer (Inspired by 439a3727-8e6d-4daf-9591-fd00b0b5f1dc.png) */
+    /* Fixed Watermark Engine */
     .state-bg-watermark {
         position: absolute;
         right: 0;
@@ -425,7 +425,7 @@
         transition: background-image 0.4s ease-in-out;
     }
 
-    /* Circular CM Dynamic Image Frame */
+    /* Dynamic Portrait Ring */
     .cm-portrait-container {
         position: relative;
         z-index: 5;
@@ -451,7 +451,6 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: all 0.3s ease;
     }
 
     .cm-name-label {
@@ -469,7 +468,7 @@
         letter-spacing: 1.5px;
     }
 
-    /* Stats Grid System */
+    /* Stats Dashboard Layout Grid */
     .profile-stats-grid {
         position: relative;
         z-index: 5;
@@ -511,7 +510,7 @@
         font-weight: 700;
     }
 
-    /* Right Side Grid Panel */
+    /* Right Selection Board Area styling mapping */
     .map-selection-interface {
         background: rgba(10, 37, 64, 0.5);
         border-radius: 16px;
@@ -537,7 +536,6 @@
         padding-right: 8px;
     }
 
-    /* Custom scrollbar tracking design template */
     .states-interactive-grid::-webkit-scrollbar {
         width: 6px;
     }
@@ -585,90 +583,91 @@
 
     <div class="dashboard-layout">
         
-        <!-- Left Side Display Section Card Layout -->
+        <!-- Profile Dashboard Dynamic Card Display View Panel -->
         <div class="profile-display-card" id="displayCard">
-            <!-- Automated Dynamic Map Graphic -->
-            <div class="state-bg-watermark" id="stateWatermark" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Uttar_Pradesh_in_India_%28claims_disputed%29.svg/250px-Uttar_Pradesh_in_India_%28claims_disputed%29.svg.png');"></div>
+            <!-- Background Map Watermark Base Container -->
+            <div class="state-bg-watermark" id="stateWatermark"></div>
             
-            <!-- CM Dynamic Image & Frame Block -->
+            <!-- Picture Ring Module Area -->
             <div class="cm-portrait-container">
                 <div class="cm-image-frame">
-                    <img id="cmImage" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Yogi_Adityanath_Official_Portrait.jpg" alt="Chief Minister Portrait">
+                    <img id="cmImage" src="" alt="CM Portrait">
                 </div>
-                <div class="cm-name-label" id="cmName">Shri Yogi Adityanath</div>
-                <div class="cm-designation" id="stateLabel">Uttar Pradesh</div>
+                <div class="cm-name-label" id="cmName">Loading...</div>
+                <div class="cm-designation" id="stateLabel">Loading...</div>
             </div>
 
-            <!-- Dashboard Stats Tracking Output Grid -->
+            <!-- Quantitative Parliament Metrics Data Boxes -->
             <div class="profile-stats-grid">
                 <div class="stat-metric-box">
                     <span>Governing Regime</span>
-                    <strong id="partyLabel" class="regime-text">BJP (NDA)</strong>
+                    <strong id="partyLabel" class="regime-text">-</strong>
                 </div>
                 <div class="stat-metric-box">
                     <span>Lok Sabha Seats</span>
-                    <strong id="lsSeats">80</strong>
+                    <strong id="lsSeats">-</strong>
                 </div>
                 <div class="stat-metric-box">
                     <span>Rajya Sabha Seats</span>
-                    <strong id="rsSeats">31</strong>
+                    <strong id="rsSeats">-</strong>
                 </div>
                 <div class="stat-metric-box">
                     <span>Assembly MLAs</span>
-                    <strong id="mlaSeats">403</strong>
+                    <strong id="mlaSeats">-</strong>
                 </div>
             </div>
         </div>
 
-        <!-- Right Side Selection Panel: Complete 28 State Set Grid -->
+        <!-- Comprehensive State Grid Switchboard Module -->
         <div class="map-selection-interface">
             <div class="interface-instruction">
                 ▶ CLICK ANY STATE BELOW TO VIEW HISTORICAL PARTY DATA & STATS
             </div>
             
             <div class="states-interactive-grid">
-                <div class="state-clickable-card active-state" onclick="loadState('UP', this)">Uttar Pradesh</div>
-                <div class="state-clickable-card" onclick="loadState('MH', this)">Maharashtra</div>
-                <div class="state-clickable-card" onclick="loadState('WB', this)">West Bengal</div>
-                <div class="state-clickable-card" onclick="loadState('BR', this)">Bihar</div>
-                <div class="state-clickable-card" onclick="loadState('TN', this)">Tamil Nadu</div>
-                <div class="state-clickable-card" onclick="loadState('AP', this)">Andhra Pradesh</div>
-                <div class="state-clickable-card" onclick="loadState('MP', this)">Madhya Pradesh</div>
-                <div class="state-clickable-card" onclick="loadState('KA', this)">Karnataka</div>
-                <div class="state-clickable-card" onclick="loadState('GJ', this)">Gujarat</div>
-                <div class="state-clickable-card" onclick="loadState('RJ', this)">Rajasthan</div>
-                <div class="state-clickable-card" onclick="loadState('OR', this)">Odisha</div>
-                <div class="state-clickable-card" onclick="loadState('KL', this)">Kerala</div>
-                <div class="state-clickable-card" onclick="loadState('TS', this)">Telangana</div>
-                <div class="state-clickable-card" onclick="loadState('AS', this)">Assam</div>
-                <div class="state-clickable-card" onclick="loadState('JH', this)">Jharkhand</div>
-                <div class="state-clickable-card" onclick="loadState('PB', this)">Punjab</div>
-                <div class="state-clickable-card" onclick="loadState('CT', this)">Chhattisgarh</div>
-                <div class="state-clickable-card" onclick="loadState('HR', this)">Haryana</div>
-                <div class="state-clickable-card" onclick="loadState('JK', this)">Jammu & Kashmir</div>
-                <div class="state-clickable-card" onclick="loadState('UK', this)">Uttarakhand</div>
-                <div class="state-clickable-card" onclick="loadState('HP', this)">Himachal Pradesh</div>
-                <div class="state-clickable-card" onclick="loadState('GA', this)">Goa</div>
-                <div class="state-clickable-card" onclick="loadState('TR', this)">Tripura</div>
-                <div class="state-clickable-card" onclick="loadState('ML', this)">Meghalaya</div>
-                <div class="state-clickable-card" onclick="loadState('MN', this)">Manipur</div>
-                <div class="state-clickable-card" onclick="loadState('NL', this)">Nagaland</div>
-                <div class="state-clickable-card" onclick="loadState('SK', this)">Sikkim</div>
-                <div class="state-clickable-card" onclick="loadState('MZ', this)">Mizoram</div>
-                <div class="state-clickable-card" onclick="loadState('AR', this)">Arunachal Pradesh</div>
+                <!-- Data anchors mapped to match core dataset attributes -->
+                <div class="state-clickable-card active-state" id="btn-UP" onclick="loadState('UP', this)">Uttar Pradesh</div>
+                <div class="state-clickable-card" id="btn-MH" onclick="loadState('MH', this)">Maharashtra</div>
+                <div class="state-clickable-card" id="btn-WB" onclick="loadState('WB', this)">West Bengal</div>
+                <div class="state-clickable-card" id="btn-BR" onclick="loadState('BR', this)">Bihar</div>
+                <div class="state-clickable-card" id="btn-TN" onclick="loadState('TN', this)">Tamil Nadu</div>
+                <div class="state-clickable-card" id="btn-AP" onclick="loadState('AP', this)">Andhra Pradesh</div>
+                <div class="state-clickable-card" id="btn-MP" onclick="loadState('MP', this)">Madhya Pradesh</div>
+                <div class="state-clickable-card" id="btn-KA" onclick="loadState('KA', this)">Karnataka</div>
+                <div class="state-clickable-card" id="btn-GJ" onclick="loadState('GJ', this)">Gujarat</div>
+                <div class="state-clickable-card" id="btn-RJ" onclick="loadState('RJ', this)">Rajasthan</div>
+                <div class="state-clickable-card" id="btn-OR" onclick="loadState('OR', this)">Odisha</div>
+                <div class="state-clickable-card" id="btn-KL" onclick="loadState('KL', this)">Kerala</div>
+                <div class="state-clickable-card" id="btn-TS" onclick="loadState('TS', this)">Telangana</div>
+                <div class="state-clickable-card" id="btn-AS" onclick="loadState('AS', this)">Assam</div>
+                <div class="state-clickable-card" id="btn-JH" onclick="loadState('JH', this)">Jharkhand</div>
+                <div class="state-clickable-card" id="btn-PB" onclick="loadState('PB', this)">Punjab</div>
+                <div class="state-clickable-card" id="btn-CT" onclick="loadState('CT', this)">Chhattisgarh</div>
+                <div class="state-clickable-card" id="btn-HR" onclick="loadState('HR', this)">Haryana</div>
+                <div class="state-clickable-card" id="btn-JK" onclick="loadState('JK', this)">Jammu & Kashmir</div>
+                <div class="state-clickable-card" id="btn-UK" onclick="loadState('UK', this)">Uttarakhand</div>
+                <div class="state-clickable-card" id="btn-HP" onclick="loadState('HP', this)">Himachal Pradesh</div>
+                <div class="state-clickable-card" id="btn-GA" onclick="loadState('GA', this)">Goa</div>
+                <div class="state-clickable-card" id="btn-TR" onclick="loadState('TR', this)">Tripura</div>
+                <div class="state-clickable-card" id="btn-ML" onclick="loadState('ML', this)">Meghalaya</div>
+                <div class="state-clickable-card" id="btn-MN" onclick="loadState('MN', this)">Manipur</div>
+                <div class="state-clickable-card" id="btn-NL" onclick="loadState('NL', this)">Nagaland</div>
+                <div class="state-clickable-card" id="btn-SK" onclick="loadState('SK', this)">Sikkim</div>
+                <div class="state-clickable-card" id="btn-MZ" onclick="loadState('MZ', this)">Mizoram</div>
+                <div class="state-clickable-card" id="btn-AR" onclick="loadState('AR', this)">Arunachal Pradesh</div>
             </div>
         </div>
 
     </div>
 </section>
 
-<!-- CDN Cloud Map Engine and Dynamic Swap Control Script Logic -->
 <script>
+    // Unified 28-State Dataset populated with high-res public CDN placeholders
     const comprehensiveIndiaMap = {
         UP: { name: "Shri Yogi Adityanath", state: "Uttar Pradesh", party: "BJP (NDA)", ls: "80", rs: "31", mla: "403", cm_img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Yogi_Adityanath_Official_Portrait.jpg", map_img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Uttar_Pradesh_in_India_%28claims_disputed%29.svg/250px-Uttar_Pradesh_in_India_%28claims_disputed%29.svg.png" },
         MH: { name: "Shri Devendra Fadnavis", state: "Maharashtra", party: "BJP (Mahayuti)", ls: "48", rs: "19", mla: "288", cm_img: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Devendra_Fadnavis_clean_portrait.jpg", map_img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Maharashtra_in_India_%28claims_disputed%29.svg/250px-Maharashtra_in_India_%28claims_disputed%29.svg.png" },
-        WB: { name: "Shri Suvendu Adhikari", state: "West Bengal", party: "BJP / NDA", ls: "42", rs: "16", mla: "294", cm_img: "https://upload.wikimedia.org/wikipedia/commons/5/50/Suvendu_Adhikari_Portrait.jpg", map_img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/West_Bengal_in_India_%28claims_disputed%29.svg/250px-West_Bengal_in_India_%28claims_disputed%29.svg.png" },
-        BR: { name: "Shri Samrat Choudhary", state: "Bihar", party: "BJP (NDA)", ls: "40", rs: "16", mla: "243", cm_img: "https://upload.wikimedia.org/wikipedia/commons/9/91/Samrat_Choudhary_cropped_portrait.jpg", map_img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Bihar_in_India_%28claims_disputed%29.svg/250px-Bihar_in_India_%28claims_disputed%29.svg.png" },
+        WB: { name: "Smt. Mamata Banerjee", state: "West Bengal", party: "AITC", ls: "42", rs: "16", mla: "294", cm_img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Mamata_Banerjee_official_portrait_crop.jpg/220px-Mamata_Banerjee_official_portrait_crop.jpg", map_img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/West_Bengal_in_India_%28claims_disputed%29.svg/250px-West_Bengal_in_India_%28claims_disputed%29.svg.png" },
+        BR: { name: "Shri Nitish Kumar", state: "Bihar", party: "JD(U) (NDA)", ls: "40", rs: "16", mla: "243", cm_img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Nitish_Kumar_Portrait.jpg/220px-Nitish_Kumar_Portrait.jpg", map_img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Bihar_in_India_%28claims_disputed%29.svg/250px-Bihar_in_India_%28claims_disputed%29.svg.png" },
         TN: { name: "Shri M. K. Stalin", state: "Tamil Nadu", party: "DMK (INDIA)", ls: "39", rs: "18", mla: "234", cm_img: "https://upload.wikimedia.org/wikipedia/commons/5/5a/M._K._Stalin.jpg", map_img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Tamil_Nadu_in_India_%28claims_disputed%29.svg/250px-Tamil_Nadu_in_India_%28claims_disputed%29.svg.png" },
         AP: { name: "Shri N. Chandrababu Naidu", state: "Andhra Pradesh", party: "TDP (NDA)", ls: "25", rs: "11", mla: "175", cm_img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Nara_Chandrababu_Naidu.jpg", map_img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Andhra_Pradesh_in_India_%28claims_disputed%29.svg/250px-Andhra_Pradesh_in_India_%28claims_disputed%29.svg.png" },
         MP: { name: "Shri Mohan Yadav", state: "Madhya Pradesh", party: "BJP (NDA)", ls: "29", rs: "11", mla: "230", cm_img: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Dr._Mohan_Yadav_Official_Portrait.jpg", map_img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Madhya_Pradesh_in_India_%28claims_disputed%29.svg/250px-Madhya_Pradesh_in_India_%28claims_disputed%29.svg.png" },
@@ -697,11 +696,18 @@
     };
 
     function loadState(stateId, element) {
+        // Toggle Active Interface State Classes
         document.querySelectorAll('.state-clickable-card').forEach(card => card.classList.remove('active-state'));
-        element.classList.add('active-state');
+        if (element) {
+            element.classList.add('active-state');
+        } else {
+            const defaultBtn = document.getElementById('btn-' + stateId);
+            if (defaultBtn) defaultBtn.classList.add('active-state');
+        }
 
         const data = comprehensiveIndiaMap[stateId];
         if(data) {
+            // Safe Structural Text Injection
             document.getElementById('cmName').innerText = data.name;
             document.getElementById('stateLabel').innerText = data.state;
             document.getElementById('partyLabel').innerText = data.party;
@@ -709,11 +715,16 @@
             document.getElementById('rsSeats').innerText = data.rs;
             document.getElementById('mlaSeats').innerText = data.mla;
             
-            // Injecting real network image addresses smoothly on every single user click interaction
+            // Image asset injection fix
             document.getElementById('cmImage').src = data.cm_img;
             document.getElementById('stateWatermark').style.backgroundImage = "url('" + data.map_img + "')";
         }
     }
+
+    // Window load hook ensures initialization happens immediately
+    window.addEventListener('DOMContentLoaded', () => {
+        loadState('UP', null);
+    });
 </script>
     <!-- Footer -->
     <footer class="footer">

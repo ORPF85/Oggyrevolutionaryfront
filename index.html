@@ -29,24 +29,185 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>OGGY'S POLITICAL REFORM & DEVELOPMENT FRONT</h1>
-            <p class="hero-tagline">"One Nation, One Identity, Equal Progress."</p>
-            <p class="hero-description">
-                Oggy's Political Reform & Development Front (OPRDF) stands as a historic paradigm shift in Indian governance. 
-                We refuse to view our citizens through the fractured lenses of religious divides, caste hierarchies, or linguistic disputes. 
-                OPRDF represents every single individual born of this soil as an equal Indian—endowed with identical rights, identical dignity, 
-                and identical ownership over the nation's future. Our mission is to dismantle identity politics and replace it with a ruthless 
-                commitment to socio-economic engineering, constitutional discipline, and human development.
-            </p>
-            <div class="banner-buttons">
-                <a href="#blueprint" class="btn btn-main">Socio-Economic Blueprint</a>
-                <a href="#protocol" class="btn btn-secondary">Constitutional Governance</a>
-            </div>
+   <!-- Custom Wide-Screen Welcome Banner Block -->
+<style>
+    .welcome-hero {
+        position: relative;
+        width: 100%;
+        min-height: 85vh;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ee 100%);
+        display: flex;
+        align-items: center;
+        padding: 40px 8%;
+        overflow: hidden;
+    }
+
+    /* Left Side Branding Content Layout */
+    .welcome-container {
+        max-width: 60%;
+        z-index: 5;
+    }
+
+    .welcome-badge {
+        display: inline-block;
+        background: #002244;
+        color: #ffcc00;
+        font-size: 14px;
+        font-weight: 800;
+        text-transform: uppercase;
+        padding: 8px 20px;
+        border-radius: 30px;
+        margin-bottom: 25px;
+        letter-spacing: 2px;
+        box-shadow: 0 4px 10px rgba(0, 34, 68, 0.15);
+    }
+
+    .welcome-container h1 {
+        font-size: 56px;
+        font-weight: 900;
+        line-height: 1.1;
+        color: #002244;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+    }
+
+    /* Secondary color tag line style */
+    .welcome-container h1 span {
+        color: #ffcc00;
+        display: block;
+        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .welcome-description {
+        font-size: 18px;
+        color: #4a5568;
+        line-height: 1.6;
+        margin-bottom: 35px;
+        max-width: 90%;
+    }
+
+    /* Action buttons replicating the screenshot buttons */
+    .welcome-cta-group {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .welcome-btn {
+        padding: 15px 35px;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .welcome-btn-primary {
+        background: #0056b3;
+        color: white;
+        box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+    }
+
+    .welcome-btn-primary:hover {
+        background: #002244;
+        transform: translateY(-2px);
+    }
+
+    .welcome-btn-secondary {
+        background: transparent;
+        color: #002244;
+        border: 2px solid #002244;
+    }
+
+    .welcome-btn-secondary:hover {
+        background: #002244;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    /* Pure CSS Shadow Silhouette Image of a Common Man */
+    .silhouette-wrapper {
+        position: absolute;
+        right: 5%;
+        bottom: 0;
+        width: 35%;
+        height: 90%;
+        z-index: 2;
+        pointer-events: none;
+        opacity: 0.85;
+    }
+
+    /* The shadow composition graphic */
+    .common-man-shadow {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: currentColor;
+        color: #1a2a3a; /* Deep shadow hue */
+        mask: radial-gradient(circle at 50% 22%, currentColor 20%, transparent 21%),
+              radial-gradient(circle at 50% 90%, currentColor 45%, transparent 46%);
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='black' d='M50,15 A12,12 0 1,0 50,39 A12,12 0 1,0 50,15 Z M25,95 C25,60 32,45 50,45 C68,45 75,60 75,95 Z'/></svg>") no-repeat bottom center;
+        mask-size: contain;
+        -webkit-mask-size: contain;
+    }
+
+    /* Subtle background circle element to match screenshot layout styling */
+    .bg-circle-accent {
+        position: absolute;
+        right: -5%;
+        top: 10%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(255,204,0,0.15) 0%, transparent 70%);
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    /* Adaptive Mobile Optimization */
+    @media (max-width: 992px) {
+        .welcome-hero { padding: 80px 5%; min-height: auto; }
+        .welcome-container { max-width: 100%; text-align: center; }
+        .welcome-description { max-width: 100%; }
+        .welcome-cta-group { justify-content: center; }
+        .silhouette-wrapper { display: none; } /* Hide shadow icon on small phone displays */
+    }
+</style>
+
+<section class="welcome-hero" id="home">
+    <!-- Visual background accent ring -->
+    <div class="bg-circle-accent"></div>
+
+    <div class="welcome-container">
+        <!-- Structural Campaign Tag -->
+        <span class="welcome-badge">#ViksitBharatOPRDF</span>
+        
+        <!-- Requested Heading Parameters -->
+        <h1>
+            New India,
+            <span>Developed India.</span>
+        </h1>
+        
+        <p class="welcome-description">
+            The Organization for Political Reform & Development (OPRDF) is engineering a historic framework built for the common citizen. No identity divisions, no populist compromises—just straight, competent governance aimed at structural national growth.
+        </p>
+
+        <!-- Functional Target Gateways -->
+        <div class="welcome-cta-group">
+            <a href="#blueprint" class="welcome-btn welcome-btn-primary">Explore Blueprint</a>
+            <a href="schemes.html" class="welcome-btn welcome-btn-secondary">View Live Schemes</a>
         </div>
-    </section>
+    </div>
+
+    <!-- Right-Hand Side Common Man Silhouette Block -->
+    <div class="silhouette-wrapper">
+        <div class="common-man-shadow"></div>
+    </div>
+</section>
 
     <!-- ==========================================
          SECTION: THE SOCIO-ECONOMIC BLUEPRINT 

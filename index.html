@@ -354,139 +354,133 @@
         </div>
     </section>
 <!-- ==========================================
-     SECTION: NATIONAL FOOTPRINTS & STATE DATA 
+     SECTION: DYNAMIC NATIONAL FOOTPRINTS MATRIX
      ========================================== -->
 <style>
     .footprints-section {
-        background: #002244; /* Premium Deep Navy from your brand */
+        background: #002244;
         color: white;
-        padding: 80px 8%;
+        padding: 80px 6%;
         font-family: 'Poppins', sans-serif;
-        position: relative;
     }
 
-    .footprints-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 50px;
-        align-items: center;
+    .footprints-title-area {
+        text-align: center;
+        margin-bottom: 50px;
     }
 
-    /* Left Text & Stats Column */
-    .footprints-left {
-        flex: 1;
-        min-width: 320px;
-    }
-
-    .footprints-left h2 {
-        font-size: 48px;
+    .footprints-title-area h2 {
+        font-size: 50px;
         font-weight: 800;
-        letter-spacing: -1px;
-        line-height: 1.1;
-        margin-bottom: 10px;
         text-transform: uppercase;
+        letter-spacing: -1px;
     }
 
-    .footprints-subtitle {
-        color: #ffcc00; /* Yellow Accent */
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 30px;
+    .footprints-title-area p {
+        color: #ffcc00;
+        font-size: 20px;
+        font-weight: 600;
     }
 
-    /* National Parliament Counter Blocks */
-    .national-stats {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 40px;
+    .dashboard-layout {
+        display: grid;
+        grid-template-columns: 1.1fr 1.9fr;
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto;
     }
 
-    .stat-box {
+    /* Left Side: Dynamic Display Card Box Structure */
+    .profile-display-card {
         background: rgba(255, 255, 255, 0.05);
-        border-left: 4px solid #ffcc00;
-        padding: 15px 25px;
-        border-radius: 4px;
-        flex: 1;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 600px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     }
 
-    .stat-box h4 {
+    /* Background state silhouette graphic layer */
+    .state-bg-watermark {
+        position: absolute;
+        right: -10%;
+        top: -5%;
+        font-size: 220px;
+        color: rgba(255, 255, 255, 0.03);
+        pointer-events: none;
+        z-index: 1;
+        transition: 0.3s ease;
+    }
+
+    /* Chief Minister Image and Label Container */
+    .cm-portrait-container {
+        position: relative;
+        z-index: 5;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .cm-image-frame {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 4px solid #ffcc00;
+        margin: 0 auto 15px auto;
+        background: #113355;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .cm-image-frame i {
+        font-size: 70px;
+        color: rgba(255, 255, 255, 0.3);
+    }
+
+    .cm-name-label {
+        font-size: 22px;
+        font-weight: 800;
+        color: #ffffff;
+        margin-top: 5px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .cm-designation {
         font-size: 14px;
-        color: #a0aec0;
+        color: #ffcc00;
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 1px;
-        margin-bottom: 5px;
     }
 
-    .stat-box p {
-        font-size: 28px;
-        font-weight: 800;
-        color: white;
-    }
-
-    /* Interactive Dropdown Matrix Selector */
-    .state-selector-wrapper {
-        margin-bottom: 30px;
-    }
-
-    .state-selector-wrapper label {
-        display: block;
-        font-size: 14px;
-        color: #ffcc00;
-        font-weight: 700;
-        margin-bottom: 8px;
-        text-transform: uppercase;
-    }
-
-    .state-select {
-        width: 100%;
-        padding: 15px;
-        background: #ffffff;
-        color: #002244;
-        font-size: 16px;
-        font-weight: 700;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        outline: none;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    /* Dynamic Data Display Panel (Matches layout box in Screenshot) */
-    .state-data-panel {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Live Data Info Panel Layout */
+    .profile-stats-grid {
+        position: relative;
+        z-index: 5;
+        background: rgba(0, 0, 0, 0.3);
         border-radius: 12px;
-        padding: 30px;
-        transition: all 0.3s ease;
-    }
-
-    .panel-header h3 {
-        font-size: 24px;
-        font-weight: 700;
-        color: white;
-        margin-bottom: 2px;
-    }
-
-    .panel-header p {
-        color: #ffcc00;
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 20px;
-    }
-
-    .seats-grid {
+        padding: 20px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
-        text-align: center;
-        background: rgba(0, 0, 0, 0.2);
-        padding: 15px;
-        border-radius: 8px;
     }
 
-    .seat-item span {
+    .stat-metric-box {
+        background: rgba(255,255,255,0.03);
+        border-bottom: 3px solid #0056b3;
+        padding: 12px;
+        border-radius: 6px;
+        text-align: center;
+    }
+
+    .stat-metric-box span {
         display: block;
         font-size: 11px;
         color: #a0aec0;
@@ -494,146 +488,217 @@
         text-transform: uppercase;
     }
 
-    .seat-item strong {
+    .stat-metric-box strong {
+        display: block;
+        font-size: 22px;
+        color: white;
+        margin-top: 4px;
+    }
+
+    /* Right Side: Grid Map Selection Interface Panel */
+    .map-selection-interface {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 16px;
+        padding: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .interface-instruction {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #a0aec0;
+        margin-bottom: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .states-interactive-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+        max-height: 500px;
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+
+    /* Custom Scrollbar for State Grid */
+    .states-interactive-grid::-webkit-scrollbar {
+        width: 6px;
+    }
+    .states-interactive-grid::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+    }
+
+    .state-clickable-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .state-clickable-card:hover, .state-clickable-card.active-state {
+        background: #ffcc00;
+        color: #002244;
+        transform: translateY(-2px);
+        font-weight: 700;
+        border-color: #ffcc00;
+    }
+
+    .state-clickable-card i {
         display: block;
         font-size: 20px;
-        color: white;
-        margin-top: 5px;
+        margin-bottom: 6px;
+        opacity: 0.7;
     }
 
-    /* Right Abstract Graphic Column */
-    .footprints-right {
-        flex: 1;
-        min-width: 350px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
-
-    /* Clean fallback CSS visual cluster map placeholder matching the graphic layout */
-    .map-placeholder-graphic {
-        width: 80%;
-        max-width: 400px;
-        opacity: 0.15;
-        pointer-events: none;
-    }
-
-    @media (max-width: 768px) {
-        .footprints-section { padding: 50px 5%; }
-        .footprints-left h2 { font-size: 36px; }
-        .seats-grid { grid-template-columns: repeat(2, 1fr); }
-        .footprints-right { display: none; }
+    @media (max-width: 1024px) {
+        .dashboard-layout { grid-template-columns: 1fr; }
+        .profile-display-card { min-height: auto; }
     }
 </style>
 
 <section class="footprints-section" id="footprints">
-    <div class="footprints-container">
+    <div class="footprints-title-area">
+        <h2>Our Footprints</h2>
+        <p>Interactive Pan-India Governance Matrix</p>
+    </div>
+
+    <div class="dashboard-layout">
         
-        <!-- Left Data Panel Layout -->
-        <div class="footprints-left">
-            <h2>Our Footprints</h2>
-            <div class="footprints-subtitle">National Political Overview</div>
-
-            <!-- Parliament Stats Display Rows -->
-            <div class="national-stats">
-                <div class="stat-box">
-                    <h4>Lok Sabha</h4>
-                    <p>240 / 543</p>
+        <!-- Left Column: Dynamic Display Card Panel -->
+        <div class="profile-display-card" id="displayCard">
+            <!-- Background State Identity Icon Silhouette -->
+            <div class="state-bg-watermark" id="stateWatermark"><i class="fa-solid fa-map-location-dot"></i></div>
+            
+            <!-- Chief Minister Dynamic Head Frame & Under-Image Label -->
+            <div class="cm-portrait-container">
+                <div class="cm-image-frame">
+                    <!-- Replace the icon below with an actual image path (e.g. src="yogi.jpg") once files are loaded -->
+                    <i class="fa-solid fa-user-tie"></i>
                 </div>
-                <div class="stat-box">
-                    <h4>Rajya Sabha</h4>
-                    <p>113 / 245</p>
-                </div>
+                <div class="cm-name-label" id="cmName">Shri Yogi Adityanath</div>
+                <div class="cm-designation" id="stateLabel">Uttar Pradesh</div>
             </div>
 
-            <!-- Selection Gateway Entry Dropdown -->
-            <div class="state-selector-wrapper">
-                <label for="stateSelector">Select Indian State / UT Data Matrix</label>
-                <select id="stateSelector" class="state-select" onchange="updateStateData(this.value)">
-                    <option value="UP">Uttar Pradesh</option>
-                    <option value="MH">Maharashtra</option>
-                    <option value="BR">Bihar</option>
-                    <option value="WB">West Bengal</option>
-                    <option value="TN">Tamil Nadu</option>
-                </select>
-            </div>
-
-            <!-- Interactive Display Output Card Frame -->
-            <div class="state-data-panel" id="dataPanel">
-                <div class="panel-header">
-                    <h3 id="cmName">Shri Yogi Adityanath</h3>
-                    <p id="governingParty">Chief Minister | BJP-led NDA Alliance</p>
+            <!-- Detailed Seat Share Stats Dashboard Grid -->
+            <div class="profile-stats-grid">
+                <div class="stat-metric-box">
+                    <span>Governing Regime</span>
+                    <strong id="partyLabel" style="font-size:14px; color:#ffcc00; margin-top:8px;">BJP / NDA</strong>
                 </div>
-                <div class="seats-grid">
-                    <div class="seat-item">
-                        <span>MP Lok Sabha</span>
-                        <strong id="lsSeats">80</strong>
-                    </div>
-                    <div class="seat-item">
-                        <span>MP Rajya Sabha</span>
-                        <strong id="rsSeats">31</strong>
-                    </div>
-                    <div class="seat-item">
-                        <span>MLA Assembly</span>
-                        <strong id="mlaSeats">403</strong>
-                    </div>
-                    <div class="seat-item">
-                        <span>MLC Council</span>
-                        <strong id="mlcSeats">100</strong>
-                    </div>
+                <div class="stat-metric-box">
+                    <span>Lok Sabha Seats</span>
+                    <strong id="lsSeats">80</strong>
+                </div>
+                <div class="stat-metric-box">
+                    <span>Rajya Sabha Seats</span>
+                    <strong id="rsSeats">31</strong>
+                </div>
+                <div class="stat-metric-box">
+                    <span>Assembly MLAs</span>
+                    <strong id="mlaSeats">403</strong>
                 </div>
             </div>
         </div>
 
-        <!-- Right Side Graphic Overlay Base Structure -->
-        <div class="footprints-right">
-            <!-- Uses FontAwesome to map a clean structural globe grid accent background -->
-            <i class="fa-solid fa-map-location-dot map-placeholder-graphic" style="font-size: 250px;"></i>
+        <!-- Right Column: Map Replacement Selection Interface Panel -->
+        <div class="map-selection-interface">
+            <div class="interface-instruction">
+                <i class="fa-solid fa-arrow-pointer"></i> Click any state below to view historical party data & stats
+            </div>
+            
+            <!-- Comprehensive Active 28 State Grid Core -->
+            <div class="states-interactive-grid">
+                <div class="state-clickable-card active-state" onclick="loadState('UP', this)"><i class="fa-solid fa-mountain-sun"></i>Uttar Pradesh</div>
+                <div class="state-clickable-card" onclick="loadState('MH', this)"><i class="fa-solid fa-landmark"></i>Maharashtra</div>
+                <div class="state-clickable-card" onclick="loadState('WB', this)"><i class="fa-solid fa-gopuram"></i>West Bengal</div>
+                <div class="state-clickable-card" onclick="loadState('BR', this)"><i class="fa-solid fa-archway"></i>Bihar</div>
+                <div class="state-clickable-card" onclick="loadState('TN', this)"><i class="fa-solid fa-tree"></i>Tamil Nadu</div>
+                <div class="state-clickable-card" onclick="loadState('AP', this)"><i class="fa-solid fa-water"></i>Andhra Pradesh</div>
+                <div class="state-clickable-card" onclick="loadState('MP', this)"><i class="fa-solid fa-shiva"></i>Madhya Pradesh</div>
+                <div class="state-clickable-card" onclick="loadState('KA', this)"><i class="fa-solid fa-building-columns"></i>Karnataka</div>
+                <div class="state-clickable-card" onclick="loadState('GJ', this)"><i class="fa-solid fa-ship"></i>Gujarat</div>
+                <div class="state-clickable-card" onclick="loadState('RJ', this)"><i class="fa-solid fa-fort-awesome"></i>Rajasthan</div>
+                <div class="state-clickable-card" onclick="loadState('OR', this)"><i class="fa-solid fa-wheelchair"></i>Odisha</div>
+                <div class="state-clickable-card" onclick="loadState('KL', this)"><i class="fa-solid fa-ship"></i>Kerala</div>
+                <div class="state-clickable-card" onclick="loadState('TS', this)"><i class="fa-solid fa-monument"></i>Telangana</div>
+                <div class="state-clickable-card" onclick="loadState('AS', this)"><i class="fa-solid fa-leaf"></i>Assam</div>
+                <div class="state-clickable-card" onclick="loadState('JH', this)"><i class="fa-solid fa-gem"></i>Jharkhand</div>
+                <div class="state-clickable-card" onclick="loadState('PB', this)"><i class="fa-solid fa-wheat"></i>Punjab</div>
+                <div class="state-clickable-card" onclick="loadState('CT', this)"><i class="fa-solid fa-industry"></i>Chhattisgarh</div>
+                <div class="state-clickable-card" onclick="loadState('HR', this)"><i class="fa-solid fa-tractor"></i>Haryana</div>
+                <div class="state-clickable-card" onclick="loadState('JK', this)"><i class="fa-solid fa-snowflake"></i>Jammu & Kashmir</div>
+                <div class="state-clickable-card" onclick="loadState('UK', this)"><i class="fa-solid fa-cloud-sun"></i>Uttarakhand</div>
+                <div class="state-clickable-card" onclick="loadState('HP', this)"><i class="fa-solid fa-mountain"></i>Himachal Pradesh</div>
+                <div class="state-clickable-card" onclick="loadState('GA', this)"><i class="fa-solid fa-umbrella-beach"></i>Goa</div>
+                <div class="state-clickable-card" onclick="loadState('TR', this)"><i class="fa-solid fa-place-of-worship"></i>Tripura</div>
+                <div class="state-clickable-card" onclick="loadState('ML', this)"><i class="fa-solid fa-cloud-showers-water"></i>Meghalaya</div>
+                <div class="state-clickable-card" onclick="loadState('MN', this)"><i class="fa-solid fa-toran"></i>Manipur</div>
+                <div class="state-clickable-card" onclick="loadState('NL', this)"><i class="fa-solid fa-person-military-to-person"></i>Nagaland</div>
+                <div class="state-clickable-card" onclick="loadState('GO', this)"><i class="fa-solid fa-coins"></i>Sikkim</div>
+                <div class="state-clickable-card" onclick="loadState('MZ', this)"><i class="fa-solid fa-hill-rockslide"></i>Mizoram</div>
+                <div class="state-clickable-card" onclick="loadState('AR', this)"><i class="fa-solid fa-sun"></i>Arunachal Pradesh</div>
+            </div>
         </div>
 
     </div>
 </section>
 
-<!-- Lightweight Javascript Matrix Logic Layer to Swap Data Safely -->
+<!-- Safe Database Engine Mapping for All Indian Regions -->
 <script>
-    const politicalMatrix = {
-        UP: {
-            cm: "Shri Yogi Adityanath",
-            party: "Chief Minister | BJP-led NDA Alliance",
-            ls: "80", rs: "31", mla: "403", mlc: "100"
-        },
-        MH: {
-            cm: "Shri Eknath Shinde",
-            party: "Chief Minister | Mahayuti (NDA) Alliance",
-            ls: "48", rs: "19", mla: "288", mlc: "78"
-        },
-        BR: {
-            cm: "Shri Nitish Kumar",
-            party: "Chief Minister | JD(U)-BJP NDA Alliance",
-            ls: "40", rs: "16", mla: "243", mlc: "75"
-        },
-        WB: {
-            cm: "Smt. Mamata Banerjee",
-            party: "Chief Minister | All India Trinamool Congress (AITC)",
-            ls: "42", rs: "16", mla: "294", mlc: "0 (N/A)"
-        },
-        TN: {
-            cm: "Shri M. K. Stalin",
-            party: "Chief Minister | DMK-led INDIA Alliance",
-            ls: "39", rs: "18", mla: "234", mlc: "0 (N/A)"
-        }
+    const comprehensiveIndiaMap = {
+        UP: { name: "Shri Yogi Adityanath", state: "Uttar Pradesh", party: "BJP (NDA)", ls: "80", rs: "31", mla: "403" },
+        MH: { name: "Shri Devendra Fadnavis", state: "Maharashtra", party: "BJP (NDA Alliance)", ls: "48", rs: "19", mla: "288" },
+        WB: { name: "Shri Suvendu Adhikari", state: "West Bengal", party: "BJP / NDA", ls: "42", rs: "16", mla: "294" },
+        BR: { name: "Shri Samrat Choudhary", state: "Bihar", party: "BJP / NDA", ls: "40", rs: "16", mla: "243" },
+        TN: { name: "Shri C. Joseph Vijay", state: "Tamil Nadu", party: "TVK", ls: "39", rs: "18", mla: "234" },
+        AP: { name: "Shri N. Chandrababu Naidu", state: "Andhra Pradesh", party: "TDP (NDA)", ls: "25", rs: "11", mla: "175" },
+        MP: { name: "Shri Mohan Yadav", state: "Madhya Pradesh", party: "BJP (NDA)", ls: "29", rs: "11", mla: "230" },
+        KA: { name: "Shri Siddaramaiah", state: "Karnataka", party: "INC (INDIA)", ls: "28", rs: "12", mla: "224" },
+        GJ: { name: "Shri Bhupendra Patel", state: "Gujarat", party: "BJP (NDA)", ls: "26", rs: "11", mla: "182" },
+        RJ: { name: "Shri Bhajan Lal Sharma", state: "Rajasthan", party: "BJP (NDA)", ls: "25", rs: "10", mla: "200" },
+        OR: { name: "Shri Mohan Charan Majhi", state: "Odisha", party: "BJP", ls: "21", rs: "10", mla: "147" },
+        KL: { name: "Shri V. D. Satheesan", state: "Kerala", party: "INC (INDIA)", ls: "20", rs: "9", mla: "140" },
+        TS: { name: "Shri A. Revanth Reddy", state: "Telangana", party: "INC (INDIA)", ls: "17", rs: "7", mla: "119" },
+        AS: { name: "Shri Himanta Biswa Sarma", state: "Assam", party: "BJP (NDA)", ls: "14", rs: "7", mla: "126" },
+        JH: { name: "Shri Hemant Soren", state: "Jharkhand", party: "JMM (INDIA)", ls: "14", rs: "6", mla: "81" },
+        PB: { name: "Shri Bhagwant Singh Mann", state: "Punjab", party: "AAP", ls: "13", rs: "7", mla: "117" },
+        CT: { name: "Shri Vishnu Deo Sai", state: "Chhattisgarh", party: "BJP (NDA)", ls: "11", rs: "5", mla: "90" },
+        HR: { name: "Shri Nayab Singh Saini", state: "Haryana", party: "BJP", ls: "10", rs: "5", mla: "90" },
+        JK: { name: "Shri Omar Abdullah", state: "Jammu & Kashmir", party: "JKNC", ls: "5", rs: "4", mla: "90" },
+        UK: { name: "Shri Pushkar Singh Dhami", state: "Uttarakhand", party: "BJP", ls: "5", rs: "3", mla: "70" },
+        HP: { name: "Shri Sukhvinder Singh Sukhu", state: "Himachal Pradesh", party: "INC", ls: "4", rs: "3", mla: "68" },
+        GA: { name: "Shri Pramod Sawant", state: "Goa", party: "BJP", ls: "2", rs: "1", mla: "40" },
+        TR: { name: "Dr. Manik Saha", state: "Tripura", party: "BJP", ls: "2", rs: "1", mla: "60" },
+        ML: { name: "Shri Conrad Sangma", state: "Meghalaya", party: "NPP", ls: "2", rs: "1", mla: "60" },
+        MN: { name: "Shri Yumnam Khemchand Singh", state: "Manipur", party: "BJP", ls: "2", rs: "1", mla: "60" },
+        NL: { name: "Shri Neiphiu Rio", state: "Nagaland", party: "NDPP", ls: "1", rs: "1", mla: "60" },
+        GO: { name: "Shri Prem Singh Tamang", state: "Sikkim", party: "SKM", ls: "1", rs: "1", mla: "32" },
+        MZ: { name: "Shri PU Lalduhoma", state: "Mizoram", party: "ZPM", ls: "1", rs: "1", mla: "40" },
+        AR: { name: "Shri Pema Khandu", state: "Arunachal Pradesh", party: "BJP", ls: "2", rs: "1", mla: "60" }
     };
 
-    function updateStateData(stateKey) {
-        const data = politicalMatrix[stateKey];
+    function loadState(stateId, element) {
+        // Toggle selected styling frame states
+        document.querySelectorAll('.state-clickable-card').forEach(card => card.classList.remove('active-state'));
+        element.classList.add('active-state');
+
+        // Extract dataset values
+        const data = comprehensiveIndiaMap[stateId];
         if(data) {
-            document.getElementById('cmName').innerText = data.cm;
-            document.getElementById('governingParty').innerText = data.party;
+            document.getElementById('cmName').innerText = data.name;
+            document.getElementById('stateLabel').innerText = data.state;
+            document.getElementById('partyLabel').innerText = data.party;
             document.getElementById('lsSeats').innerText = data.ls;
             document.getElementById('rsSeats').innerText = data.rs;
             document.getElementById('mlaSeats').innerText = data.mla;
-            document.getElementById('mlcSeats').innerText = data.mlc;
         }
     }
 </script>

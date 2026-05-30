@@ -557,21 +557,24 @@
 
 <section class="footprints-section" id="footprints">
 
+<div class="footprints-bg-overlay"></div>
+
 <div class="footprints-title-area">
-<h2>OUR FOOTPRINTS</h2>
-<p>National Political Overview</p>
+    <h2>OUR FOOTPRINTS</h2>
+    <p>National Political Overview</p>
 </div>
 
 <div class="dashboard-layout">
 
     <!-- LEFT PANEL -->
+
     <div class="profile-display-card" id="displayCard">
 
         <div class="cm-portrait-container">
 
             <div class="cm-image-frame" id="imageFrame">
 
-                <img id="cmImage" src="" alt="">
+                <img id="cmImage" src="" alt="Chief Minister">
 
             </div>
 
@@ -584,34 +587,47 @@
         <div class="profile-stats-grid">
 
             <div class="stat-metric-box">
+
                 <span>Governing Regime</span>
-                <strong id="partyLabel"></strong>
+
+                <strong class="regime-text" id="partyLabel"></strong>
+
             </div>
 
             <div class="stat-metric-box">
+
                 <span>Lok Sabha Seats</span>
+
                 <strong id="lsSeats"></strong>
+
             </div>
 
             <div class="stat-metric-box">
+
                 <span>Rajya Sabha Seats</span>
+
                 <strong id="rsSeats"></strong>
+
             </div>
 
             <div class="stat-metric-box">
+
                 <span>Assembly MLAs</span>
+
                 <strong id="mlaSeats"></strong>
+
             </div>
 
         </div>
 
     </div>
 
-    <!-- INDIA MAP -->
+    <!-- MAP PANEL -->
+
     <div class="map-selection-interface">
 
         <div class="interface-instruction">
-            ▶ CLICK ANY STATE ON THE MAP
+            ▶ CLICK ANY STATE ON THE MAP TO VIEW PARTY DATA & STATS
         </div>
 
         <div id="map"></div>

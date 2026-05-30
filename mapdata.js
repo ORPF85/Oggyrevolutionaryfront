@@ -112,17 +112,18 @@ var simplemaps_countrymap_hooks = {
   }
 };
 
-simplemaps_countrymap.hooks.select_state = function(id) {
-  var cleanId = id.replace('IN', '');
-  if (cleanId === 'TG') cleanId = 'TS'; 
-  if (cleanId === 'UT') cleanId = 'UK'; 
+simplemaps_countrymap.hooks.select_state=function(id){
 
-  var targetButton = document.getElementById('btn-' + cleanId);
-  if (typeof loadState === "function") {
-    loadState(cleanId, targetButton);
-    
-    if (window.innerWidth <= 1024) {
-      document.getElementById('displayCard').scrollIntoView({ behavior: 'smooth' });
-    }
-  }
+let clean=id.replace("IN","");
+
+if(clean==="TG") clean="TS";
+
+if(clean==="UT") clean="UK";
+
+if(typeof loadState==="function"){
+
+loadState(clean);
+
+}
+
 };

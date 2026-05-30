@@ -431,3 +431,27 @@ body {
     .social-box { flex-direction: column; }
     .social-btn { justify-content: center; }
 }
+#map{
+    width:100%;
+    min-height:650px;
+}
+
+.map-selection-interface{
+    background:#061e36;
+    border-radius:20px;
+    padding:30px;
+}
+
+.dashboard-layout{
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:30px;
+}
+
+@media(max-width:1024px){
+
+.dashboard-layout{
+grid-template-columns:1fr;
+}
+
+}

@@ -16,7 +16,8 @@
     <header class="header">
         <nav class="navbar">
             <a href="#" class="nav-logo">
-                <img src="ChatGPT Image May 27, 2026, 12_05_41 AM_2.png" alt="OPRF Logo" class="logo-img">
+                <!-- FIXED LOGO PATH BASED ON YOUR IMAGE LINK SCRIPT -->
+                <img src="ChatGPT Image May 27, 2026, 12_05_41 AM_2.png" alt="OPRDF Logo" class="logo-img" style="height: 50px; max-width: 100%; object-fit: contain;">
             </a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
@@ -42,7 +43,7 @@
         }
 
         .welcome-container {
-            max-width: 60%;
+            max-width: 55%;
             z-index: 5;
         }
 
@@ -124,30 +125,27 @@
             transform: translateY(-2px);
         }
 
-        .silhouette-wrapper {
+        /* 3D MAP REPLACEMENT WRAPPER */
+        .map-3d-wrapper {
             position: absolute;
-            right: 5%;
-            bottom: 0;
-            width: 35%;
-            height: 90%;
+            right: 6%;
+            top: 50%;
+            transform: translateY(-50%) perspective(1000px) rotateY(-15deg) rotateX(10deg);
+            width: 38%;
+            height: auto;
             z-index: 2;
-            pointer-events: none;
-            opacity: 0.85;
+            filter: drop-shadow(15px 25px 20px rgba(0,0,0,0.15));
+            transition: transform 0.5s ease;
+        }
+        
+        .map-3d-wrapper:hover {
+            transform: translateY(-52%) perspective(1000px) rotateY(-8deg) rotateX(5deg);
         }
 
-        .common-man-shadow {
-            position: absolute;
-            bottom: 0;
-            right: 0;
+        .map-3d-wrapper img {
             width: 100%;
-            height: 100%;
-            background: currentColor;
-            color: #1a2a3a;
-            mask: radial-gradient(circle at 50% 22%, currentColor 20%, transparent 21%),
-                  radial-gradient(circle at 50% 90%, currentColor 45%, transparent 46%);
-            -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='black' d='M50,15 A12,12 0 1,0 50,39 A12,12 0 1,0 50,15 Z M25,95 C25,60 32,45 50,45 C68,45 75,60 75,95 Z'/></svg>") no-repeat bottom center;
-            mask-size: contain;
-            -webkit-mask-size: contain;
+            height: auto;
+            display: block;
         }
 
         .bg-circle-accent {
@@ -156,7 +154,7 @@
             top: 10%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(255,204,0,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(234, 91, 27, 0.12) 0%, transparent 70%);
             border-radius: 50%;
             z-index: 1;
         }
@@ -166,7 +164,7 @@
             .welcome-container { max-width: 100%; text-align: center; }
             .welcome-description { max-width: 100%; }
             .welcome-cta-group { justify-content: center; }
-            .silhouette-wrapper { display: none; }
+            .map-3d-wrapper { display: none; }
         }
     </style>
 
@@ -183,8 +181,10 @@
                 <a href="schemes.html" class="welcome-btn welcome-btn-secondary">View Live Schemes</a>
             </div>
         </div>
-        <div class="silhouette-wrapper">
-            <div class="common-man-shadow"></div>
+        
+        <!-- REPLACED SILHOUETTE WITH A 3D-ORIENTED, ORANGE, WHITE-BORDERED MAP OF INDIA -->
+        <div class="map-3d-wrapper">
+            <img src="https://raw.githubusercontent.com/Anujsharma635/India-map-with-all-states-SVG/main/India_Map.svg" alt="India Map" style="filter: drop-shadow(0px 5px 0px #c2430c); background-color: #ea5b1b; padding: 15px; border-radius: 12px; border: 2px solid #ffffff;">
         </div>
     </section>
 
@@ -292,13 +292,10 @@
         </div>
     </section>
 
-    <!-- ==========================================
-         SECTION: DYNAMIC NATIONAL FOOTPRINTS MATRIX
-         ========================================== -->
+    <!-- SECTION: DYNAMIC NATIONAL FOOTPRINTS MATRIX -->
     <style>
         .footprints-section {
             background: #ea5b1b; 
-            /* FIXED IMAGE: Replaced Wikimedia raw SVG link with hotlink-safe production mirror link */
             background-image: linear-gradient(rgba(234, 91, 27, 0.92), rgba(234, 91, 27, 0.92)), url('https://raw.githubusercontent.com/Anujsharma635/India-map-with-all-states-SVG/main/India_Map.svg');
             background-size: cover;
             background-position: center;
@@ -529,7 +526,6 @@
         </div>
 
         <div class="dashboard-layout">
-            <!-- Left Dynamic Display Panel Component -->
             <div class="profile-display-card" id="displayCard">
                 <div class="cm-portrait-container">
                     <div class="cm-image-frame" id="imageFrame">
@@ -539,7 +535,6 @@
                     <div class="cm-designation" id="stateLabel">-</div>
                 </div>
 
-                <!-- Stats Boxes -->
                 <div class="profile-stats-grid">
                     <div class="stat-metric-box">
                         <span>Governing Regime</span>
@@ -560,7 +555,6 @@
                 </div>
             </div>
 
-            <!-- Right Side Controls Grid -->
             <div class="map-selection-interface">
                 <div class="interface-instruction">
                     ▶ CLICK ANY STATE BELOW TO VIEW HISTORICAL PARTY DATA & STATS
@@ -641,7 +635,6 @@
             element.classList.add('active-state');
         }
 
-        // Initialize with default state
         window.onload = function() {
             const defaultBtn = document.getElementById('btn-UP');
             if (defaultBtn) loadState('UP', defaultBtn);
